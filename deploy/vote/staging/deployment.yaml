@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     app: vote
-    name: vote
+  name: vote
 spec:
   replicas: 5
   template:
