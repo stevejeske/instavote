@@ -1,33 +1,25 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-
 resources:
 - ../base
-
 patchesStrategicMerge:
 - deployment.yaml
 - service.yaml
-
 namespace: instavote
-
 images:
-  - name: schoolofdevops/vote
-    newName: stevejeske/vote
-    newTag: v8 # {"$imagepolicy": "flux-system:vote:tag"}
-
+- name: schoolofdevops/vote
+  newName: stevejeske/vote
+  newTag: main-5f7b2a88-1679267973 # {"$imagepolicy": "flux-system:vote:tag"}
 replicas:
-  - name: vote
-    count: 4
-
+- name: vote
+  count: 4
 commonLabels:
   project: instavote
   env: staging
-
 commonAnnotations:
   supported-by: "sre@example.com"
-
 configMapGenerator:
-  - name: vote
-    literals:
-      - OPTION_A=FluxCD
-      - OPTION_B=ArgoCD
+- name: vote
+  literals:
+  - OPTION_A=FluxCD
+  - OPTION_B=ArgoCD
