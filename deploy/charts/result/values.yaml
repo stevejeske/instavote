@@ -4,7 +4,7 @@
 
 replicaCount: 1
 image:
-  repository: stevejeske/vote-result
+  repository: stevejeske/result
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "main-5f7b2a88-1679263703" # {"$imagepolicy": "flux-system:result:tag"}
